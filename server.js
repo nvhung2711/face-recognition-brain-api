@@ -10,11 +10,12 @@ import handleImage from './controllers/image.js';
 const db = knex({
     client: 'pg',
     connection: {
-        host:'127.0.0.1',
-        user:'postgres',
+        connectionString: process.env.DATABASE_URL,
+        host: process.env.DATABASE_HOST,
+        user: process.env.DATABASE_USER,
         port: 5432,
-        password:'1234',
-        database:'smart-brain'
+        password: process.env.DATABASE_PW,
+        database: process.env.DATABASE_DB
     }
 });
 
