@@ -23,7 +23,7 @@ const app = express();
 
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
-app.use(cors());
+app.use(cors({ origin: "https://face-recognition-brain-lko4.onrender.com" }));
 
 app.post('/signin', handleSignin(db, bcrypt));
 app.post('/register', handleRegister(db, bcrypt));
